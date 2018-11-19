@@ -4,8 +4,7 @@
   <% if t.completed %>
       <p><i class="far fa-check-square"></i><%= link_to t.title, task_path(t) %></p>
   <% else %>
-    <div class="task-item">
       <p><i class="far fa-square"></i><%= link_to t.title, task_path(t) %></p>
-    </div>
   <% end %>
+  <%= link_to "Delete", task_path(t.id), method: :delete, data: { confirm: "Are you sure?"}  %>
 <% end %>
